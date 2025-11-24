@@ -33,7 +33,6 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
-      --tw-outline-style: solid;
       --tw-backdrop-blur: initial;
       --tw-backdrop-brightness: initial;
       --tw-backdrop-contrast: initial;
@@ -534,10 +533,6 @@
     display: table;
   }
 
-  .h-auto {
-    height: auto;
-  }
-
   .min-h-screen {
     min-height: 100vh;
   }
@@ -564,10 +559,6 @@
 
   .max-w-7xl {
     max-width: var(--container-7xl);
-  }
-
-  .max-w-full {
-    max-width: 100%;
   }
 
   .flex-shrink-0 {
@@ -648,6 +639,10 @@
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing) * 12) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing) * 12) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
+  .overflow-auto {
+    overflow: auto;
   }
 
   .overflow-hidden {
@@ -920,34 +915,6 @@
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
 
-  .fill-\[\#2c3e50\] {
-    fill: #2c3e50;
-  }
-
-  .fill-\[\#c0392b\] {
-    fill: #c0392b;
-  }
-
-  .fill-gray-500 {
-    fill: var(--color-gray-500);
-  }
-
-  .fill-gray-600 {
-    fill: var(--color-gray-600);
-  }
-
-  .fill-gray-700 {
-    fill: var(--color-gray-700);
-  }
-
-  .fill-white {
-    fill: var(--color-white);
-  }
-
-  .fill-yellow-300 {
-    fill: var(--color-yellow-300);
-  }
-
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
@@ -1162,11 +1129,6 @@
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
 
-  .outline {
-    outline-style: var(--tw-outline-style);
-    outline-width: 1px;
-  }
-
   .backdrop-blur-sm {
     --tw-backdrop-blur: blur(var(--blur-sm));
     -webkit-backdrop-filter: var(--tw-backdrop-blur, ) var(--tw-backdrop-brightness, ) var(--tw-backdrop-contrast, ) var(--tw-backdrop-grayscale, ) var(--tw-backdrop-hue-rotate, ) var(--tw-backdrop-invert, ) var(--tw-backdrop-opacity, ) var(--tw-backdrop-saturate, ) var(--tw-backdrop-sepia, );
@@ -1189,11 +1151,6 @@
     transition-property: box-shadow;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-
-  .duration-200 {
-    --tw-duration: .2s;
-    transition-duration: .2s;
   }
 
   .duration-300 {
@@ -1547,12 +1504,6 @@ html {
   syntax: "*";
   inherits: false;
   initial-value: 0 0 #0000;
-}
-
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
 }
 
 @property --tw-backdrop-blur {
