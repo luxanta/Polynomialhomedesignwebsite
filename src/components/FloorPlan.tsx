@@ -124,7 +124,7 @@ export function FloorPlan({ onRoomClick }: FloorPlanProps) {
   const svgHeight = houseHeight * scale + marginTop + 200;
 
   return (
-    <div className="w-full overflow-auto bg-white p-4 rounded-lg shadow-2xl">
+    <div className="w-full overflow-auto bg-white p-4 rounded-lg shadow-2xl animate-fadeIn">
       <svg
         width={svgWidth}
         height={svgHeight}

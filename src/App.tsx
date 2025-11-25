@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Home, FileText, DollarSign, LayoutGrid } from 'lucide-react';
+import { Home, FileText, DollarSign, LayoutGrid, Sparkles } from 'lucide-react';
 import { FloorPlan } from './components/FloorPlan';
 import { RoomDetail } from './components/RoomDetail';
 import { roomsData } from './data/roomsData';
@@ -32,62 +32,66 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Header */}
-      <header className="bg-[#2c3e50] text-white py-8 px-6 shadow-lg sticky top-0 z-50">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      {/* Header with modern gradient */}
+      <header className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-8 px-6 shadow-2xl sticky top-0 z-50 animate-gradientShift">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-6">
-            <h1 className="mb-2">The Polynomial Residence</h1>
-            <p className="mb-3 opacity-90">Architectural Analysis & Cost Estimation</p>
-            <div className="inline-block bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
+          <div className="text-center mb-6 animate-fadeIn">
+            <div className="flex items-center justify-center gap-3 mb-2">
+              <Sparkles className="animate-pulse-custom" size={28} />
+              <h1 className="mb-0">The Polynomial Residence</h1>
+              <Sparkles className="animate-pulse-custom" size={28} />
+            </div>
+            <p className="mb-3 opacity-90 animate-fadeIn delay-100">Architectural Analysis & Cost Estimation</p>
+            <div className="inline-block bg-white/20 px-6 py-3 rounded-xl backdrop-blur-md shadow-lg border border-white/30 animate-fadeIn delay-200">
               <p className="font-mono">Model Verification Basis: x = 2</p>
             </div>
           </div>
 
-          {/* Navigation */}
+          {/* Navigation with modern buttons */}
           <nav className="flex flex-wrap justify-center gap-3 mt-6">
             <button
               onClick={() => setCurrentPage('home')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+              className={`btn-modern flex items-center gap-2 px-6 py-3 rounded-xl font-semibold shadow-lg transform transition-all duration-300 ${
                 currentPage === 'home'
-                  ? 'bg-white text-[#2c3e50]'
-                  : 'bg-white/10 hover:bg-white/20'
+                  ? 'bg-white text-indigo-600 scale-105 shadow-2xl'
+                  : 'bg-white/10 hover:bg-white/20 hover:scale-105 border border-white/20'
               }`}
             >
-              <Home size={18} />
+              <Home size={20} />
               <span>Home</span>
             </button>
             <button
               onClick={() => setCurrentPage('floor-plan')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+              className={`btn-modern flex items-center gap-2 px-6 py-3 rounded-xl font-semibold shadow-lg transform transition-all duration-300 ${
                 currentPage === 'floor-plan'
-                  ? 'bg-white text-[#2c3e50]'
-                  : 'bg-white/10 hover:bg-white/20'
+                  ? 'bg-white text-purple-600 scale-105 shadow-2xl'
+                  : 'bg-white/10 hover:bg-white/20 hover:scale-105 border border-white/20'
               }`}
             >
-              <LayoutGrid size={18} />
+              <LayoutGrid size={20} />
               <span>Floor Plan</span>
             </button>
             <button
               onClick={() => setCurrentPage('technical')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+              className={`btn-modern flex items-center gap-2 px-6 py-3 rounded-xl font-semibold shadow-lg transform transition-all duration-300 ${
                 currentPage === 'technical'
-                  ? 'bg-white text-[#2c3e50]'
-                  : 'bg-white/10 hover:bg-white/20'
+                  ? 'bg-white text-pink-600 scale-105 shadow-2xl'
+                  : 'bg-white/10 hover:bg-white/20 hover:scale-105 border border-white/20'
               }`}
             >
-              <FileText size={18} />
+              <FileText size={20} />
               <span>Technical Data</span>
             </button>
             <button
               onClick={() => setCurrentPage('cost-analysis')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
+              className={`btn-modern flex items-center gap-2 px-6 py-3 rounded-xl font-semibold shadow-lg transform transition-all duration-300 ${
                 currentPage === 'cost-analysis'
-                  ? 'bg-white text-[#2c3e50]'
-                  : 'bg-white/10 hover:bg-white/20'
+                  ? 'bg-white text-indigo-600 scale-105 shadow-2xl'
+                  : 'bg-white/10 hover:bg-white/20 hover:scale-105 border border-white/20'
               }`}
             >
-              <DollarSign size={18} />
+              <DollarSign size={20} />
               <span>Cost Analysis</span>
             </button>
           </nav>
@@ -99,9 +103,11 @@ export default function App() {
         {currentPage === 'home' && (
           <div className="space-y-12">
             {/* Hero Section */}
-            <section className="bg-white rounded-lg shadow-xl p-8 border-t-4 border-[#2c3e50]">
+            <section className="bg-white rounded-2xl shadow-2xl p-8 border border-indigo-100 animate-fadeInUp">
               <div className="text-center mb-8">
-                <h2 className="text-[#2c3e50] mb-4">Welcome to The Polynomial Residence</h2>
+                <h2 className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-4">
+                  Welcome to The Polynomial Residence
+                </h2>
                 <p className="text-gray-600 max-w-3xl mx-auto leading-relaxed">
                   Explore an innovative architectural project where mathematics meets design. 
                   Each room's dimensions are expressed as polynomial functions, demonstrating 
@@ -109,60 +115,64 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Quick Stats */}
+              {/* Quick Stats with animations */}
               <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
-                  <h3 className="text-[#2c3e50] mb-2">Total Area</h3>
-                  <p className="text-3xl mb-2">1,260 sq ft</p>
-                  <code className="text-sm text-[#c0392b] font-mono">128x³ + 32x² + 58x - 8</code>
+                <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 rounded-2xl shadow-lg hover-lift animate-float">
+                  <h3 className="text-white mb-2">Total Area</h3>
+                  <p className="text-4xl text-white mb-2">1,260 sq ft</p>
+                  <code className="text-sm text-blue-100 font-mono bg-white/20 px-3 py-1 rounded-lg">
+                    128x³ + 32x² + 58x - 8
+                  </code>
                 </div>
-                <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
-                  <h3 className="text-[#2c3e50] mb-2">Total Rooms</h3>
-                  <p className="text-3xl mb-2">7 Rooms</p>
-                  <p className="text-sm text-gray-600">4 Bedrooms/Bathrooms + 3 Common Areas</p>
+                <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-2xl shadow-lg hover-lift animate-float delay-200">
+                  <h3 className="text-white mb-2">Total Rooms</h3>
+                  <p className="text-4xl text-white mb-2">7 Rooms</p>
+                  <p className="text-sm text-purple-100">4 Bedrooms/Bathrooms + 3 Common Areas</p>
                 </div>
-                <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
-                  <h3 className="text-[#2c3e50] mb-2">Dimensions</h3>
-                  <p className="text-3xl mb-2">30ft × 42ft</p>
-                  <code className="text-sm text-[#c0392b] font-mono">(16x - 2) by (8x² + 3x + 4)</code>
+                <div className="bg-gradient-to-br from-pink-500 to-rose-600 p-6 rounded-2xl shadow-lg hover-lift animate-float delay-300">
+                  <h3 className="text-white mb-2">Dimensions</h3>
+                  <p className="text-4xl text-white mb-2">30ft × 42ft</p>
+                  <code className="text-sm text-pink-100 font-mono bg-white/20 px-3 py-1 rounded-lg">
+                    (16x - 2) by (8x² + 3x + 4)
+                  </code>
                 </div>
               </div>
             </section>
 
             {/* Room Cards Grid */}
-            <section>
-              <h2 className="text-center mb-8 text-[#2c3e50] pb-3 border-b-2 border-[#2c3e50]">
+            <section className="animate-fadeInUp delay-200">
+              <h2 className="text-center mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent pb-3">
                 Explore Individual Rooms
               </h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {Object.values(roomsData).map((room) => (
+                {Object.values(roomsData).map((room, index) => (
                   <div
                     key={room.id}
-                    className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 cursor-pointer transform hover:-translate-y-1"
+                    className={`bg-white rounded-2xl shadow-xl overflow-hidden hover-lift cursor-pointer border border-indigo-100 animate-scaleIn delay-${index * 100}`}
                     onClick={() => navigateToRoom(room.id)}
                   >
-                    <div className="bg-gradient-to-r from-[#2c3e50] to-[#34495e] p-4">
-                      <h3 className="text-white">{room.name}</h3>
+                    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 p-5 animate-gradientShift">
+                      <h3 className="text-white mb-0">{room.name}</h3>
                     </div>
                     <div className="p-5">
                       <p className="text-sm text-gray-600 mb-3">{room.dimensions}</p>
                       <div className="space-y-2">
-                        <div>
+                        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 p-3 rounded-lg border border-blue-100">
                           <p className="text-xs text-gray-500 mb-1">Area:</p>
-                          <code className="text-xs bg-gray-100 px-2 py-1 rounded text-[#c0392b] font-mono block">
+                          <code className="text-xs font-mono text-indigo-700 block">
                             {room.areaPolynomial}
                           </code>
                         </div>
-                        <div>
+                        <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-3 rounded-lg border border-purple-100">
                           <p className="text-xs text-gray-500 mb-1">Perimeter:</p>
-                          <code className="text-xs bg-gray-100 px-2 py-1 rounded text-green-700 font-mono block">
+                          <code className="text-xs font-mono text-purple-700 block">
                             {room.perimeterPolynomial}
                           </code>
                         </div>
                       </div>
                       <p className="text-xs text-gray-500 mt-3">{room.verification}</p>
-                      <button className="mt-4 w-full bg-[#2c3e50] text-white py-2 rounded hover:bg-[#34495e] transition-colors">
-                        View Details
+                      <button className="mt-4 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl hover:shadow-xl transform hover:scale-105 transition-all duration-300 btn-modern">
+                        View Details →
                       </button>
                     </div>
                   </div>
@@ -174,9 +184,11 @@ export default function App() {
 
         {/* Floor Plan Page */}
         {currentPage === 'floor-plan' && (
-          <div className="space-y-8">
-            <div className="bg-white rounded-lg shadow-xl p-8">
-              <h2 className="text-center mb-6 text-[#2c3e50]">Interactive Floor Plan</h2>
+          <div className="space-y-8 animate-fadeInUp">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-indigo-100">
+              <h2 className="text-center mb-6 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                Interactive Floor Plan
+              </h2>
               <p className="text-center text-gray-600 mb-8">
                 Click on any room to view detailed specifications and cost analysis
               </p>
@@ -187,34 +199,36 @@ export default function App() {
 
         {/* Technical Data Page */}
         {currentPage === 'technical' && (
-          <div className="space-y-8">
-            <div className="bg-white rounded-lg shadow-xl p-8">
-              <h2 className="text-center mb-8 text-[#2c3e50] border-b-2 border-[#2c3e50] pb-3">
+          <div className="space-y-8 animate-fadeInUp">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-indigo-100">
+              <h2 className="text-center mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent pb-3">
                 Technical Room Analysis
               </h2>
               
               <div className="grid md:grid-cols-2 gap-6">
                 {/* Left Column - Private Wing */}
-                <div className="space-y-4">
-                  <div className="bg-[#2c3e50] text-white p-3 text-center rounded-t-lg">
-                    <h3>Private Wing</h3>
+                <div className="space-y-4 animate-slideInLeft">
+                  <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 text-center rounded-xl shadow-lg">
+                    <h3 className="mb-0">Private Wing</h3>
                   </div>
 
-                  {['master-bedroom', 'master-bathroom', 'bathroom', 'bedroom-2'].map((roomId) => {
+                  {['master-bedroom', 'master-bathroom', 'bathroom', 'bedroom-2'].map((roomId, index) => {
                     const room = roomsData[roomId as keyof typeof roomsData];
                     return (
-                      <div key={roomId} className="border-2 border-[#2c3e50] p-5 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
-                        <h4 className="text-[#2c3e50] mb-3 pb-2 border-b border-gray-300">{room.name}</h4>
+                      <div key={roomId} className={`border-2 border-indigo-200 p-5 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl hover-lift animate-fadeIn delay-${index * 100}`}>
+                        <h4 className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-3 pb-2 border-b border-indigo-200">
+                          {room.name}
+                        </h4>
                         <p className="mb-2"><strong>Dimensions:</strong> {room.dimensions}</p>
                         <p className="mb-2">
                           <strong>Area Polynomial:</strong>{' '}
-                          <code className="bg-gray-200 px-2 py-1 text-[#c0392b] font-mono text-sm">
+                          <code className="bg-white px-3 py-1 text-indigo-700 font-mono text-sm rounded-lg border border-indigo-200">
                             {room.areaPolynomial}
                           </code>
                         </p>
                         <p className="mb-2">
                           <strong>Perimeter Polynomial:</strong>{' '}
-                          <code className="bg-gray-200 px-2 py-1 text-green-700 font-mono text-sm">
+                          <code className="bg-white px-3 py-1 text-purple-700 font-mono text-sm rounded-lg border border-purple-200">
                             {room.perimeterPolynomial}
                           </code>
                         </p>
@@ -223,9 +237,9 @@ export default function App() {
                         </p>
                         <button
                           onClick={() => navigateToRoom(roomId)}
-                          className="mt-3 w-full bg-[#2c3e50] text-white py-2 rounded hover:bg-[#34495e] transition-colors text-sm"
+                          className="mt-3 w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-3 rounded-xl hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm btn-modern"
                         >
-                          View Full Details
+                          View Full Details →
                         </button>
                       </div>
                     );
@@ -233,26 +247,28 @@ export default function App() {
                 </div>
 
                 {/* Right Column - Common Wing */}
-                <div className="space-y-4">
-                  <div className="bg-[#2c3e50] text-white p-3 text-center rounded-t-lg">
-                    <h3>Common Wing</h3>
+                <div className="space-y-4 animate-slideInRight">
+                  <div className="bg-gradient-to-r from-purple-600 to-pink-600 text-white p-4 text-center rounded-xl shadow-lg">
+                    <h3 className="mb-0">Common Wing</h3>
                   </div>
 
-                  {['kitchen', 'dining-room', 'living-room'].map((roomId) => {
+                  {['kitchen', 'dining-room', 'living-room'].map((roomId, index) => {
                     const room = roomsData[roomId as keyof typeof roomsData];
                     return (
-                      <div key={roomId} className="border-2 border-[#2c3e50] p-5 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow">
-                        <h4 className="text-[#2c3e50] mb-3 pb-2 border-b border-gray-300">{room.name}</h4>
+                      <div key={roomId} className={`border-2 border-purple-200 p-5 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl hover-lift animate-fadeIn delay-${index * 100}`}>
+                        <h4 className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-3 pb-2 border-b border-purple-200">
+                          {room.name}
+                        </h4>
                         <p className="mb-2"><strong>Dimensions:</strong> {room.dimensions}</p>
                         <p className="mb-2">
                           <strong>Area Polynomial:</strong>{' '}
-                          <code className="bg-gray-200 px-2 py-1 text-[#c0392b] font-mono text-sm">
+                          <code className="bg-white px-3 py-1 text-purple-700 font-mono text-sm rounded-lg border border-purple-200">
                             {room.areaPolynomial}
                           </code>
                         </p>
                         <p className="mb-2">
                           <strong>Perimeter Polynomial:</strong>{' '}
-                          <code className="bg-gray-200 px-2 py-1 text-green-700 font-mono text-sm">
+                          <code className="bg-white px-3 py-1 text-pink-700 font-mono text-sm rounded-lg border border-pink-200">
                             {room.perimeterPolynomial}
                           </code>
                         </p>
@@ -261,9 +277,9 @@ export default function App() {
                         </p>
                         <button
                           onClick={() => navigateToRoom(roomId)}
-                          className="mt-3 w-full bg-[#2c3e50] text-white py-2 rounded hover:bg-[#34495e] transition-colors text-sm"
+                          className="mt-3 w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-sm btn-modern"
                         >
-                          View Full Details
+                          View Full Details →
                         </button>
                       </div>
                     );
@@ -272,7 +288,7 @@ export default function App() {
               </div>
 
               {/* Total House Specifications */}
-              <div className="mt-12 bg-[#2c3e50] text-white p-8 border-4 border-double border-[#2c3e50] rounded-lg">
+              <div className="mt-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white p-8 rounded-2xl shadow-2xl animate-floatSlow">
                 <h2 className="text-center mb-6">Total House Specifications</h2>
                 <div className="max-w-3xl mx-auto space-y-3">
                   <p className="flex justify-between items-center border-b border-white/30 pb-2">
@@ -281,13 +297,13 @@ export default function App() {
                   </p>
                   <p className="flex justify-between items-center border-b border-white/30 pb-2">
                     <span>Total Area Polynomial:</span>
-                    <code className="bg-white/20 px-3 py-1 rounded text-yellow-300 font-mono">
+                    <code className="bg-white/20 px-3 py-1 rounded-lg text-yellow-200 font-mono">
                       128x³ + 32x² + 58x - 8
                     </code>
                   </p>
                   <p className="flex justify-between items-center border-b border-white/30 pb-2">
                     <span>Total Perimeter Polynomial:</span>
-                    <code className="bg-white/20 px-3 py-1 rounded text-yellow-300 font-mono">
+                    <code className="bg-white/20 px-3 py-1 rounded-lg text-yellow-200 font-mono">
                       16x² + 38x + 4
                     </code>
                   </p>
@@ -303,22 +319,24 @@ export default function App() {
 
         {/* Cost Analysis Page */}
         {currentPage === 'cost-analysis' && (
-          <div className="space-y-8">
-            <div className="bg-white rounded-lg shadow-xl p-8">
-              <h2 className="text-center mb-8 text-[#2c3e50] border-b-2 border-[#2c3e50] pb-3">
+          <div className="space-y-8 animate-fadeInUp">
+            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-indigo-100">
+              <h2 className="text-center mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent pb-3">
                 Cost Analysis Invoice
               </h2>
               
-              <div className="max-w-2xl mx-auto bg-white border-4 border-[#2c3e50] p-8 shadow-lg font-mono">
-                <div className="text-center mb-6 pb-4 border-b-2 border-dashed border-gray-400">
+              <div className="max-w-2xl mx-auto bg-gradient-to-br from-gray-50 to-white border-4 border-indigo-200 p-8 shadow-2xl font-mono rounded-2xl animate-scaleIn">
+                <div className="text-center mb-6 pb-4 border-b-2 border-dashed border-indigo-300">
                   <p className="text-sm">THE POLYNOMIAL RESIDENCE</p>
                   <p className="text-sm">Official Cost Estimate</p>
-                  <p className="text-xs text-gray-600 mt-1">Date: November 23, 2025</p>
+                  <p className="text-xs text-gray-600 mt-1">Date: November 25, 2025</p>
                 </div>
 
                 {/* Item A */}
-                <div className="mb-6 pb-4 border-b border-gray-300">
-                  <h3 className="mb-3 text-[#2c3e50]">ITEM A: Living Room (Carpet + Crown Molding)</h3>
+                <div className="mb-6 pb-4 border-b border-indigo-200 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-xl">
+                  <h3 className="mb-3 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                    ITEM A: Living Room (Carpet + Crown Molding)
+                  </h3>
                   <div className="space-y-1 text-sm">
                     <div className="flex justify-between">
                       <span>Area: 176 sq ft | Perimeter: 54 ft</span>
@@ -335,7 +353,7 @@ export default function App() {
                       <span>Installation Fee:</span>
                       <span>$250.00</span>
                     </div>
-                    <div className="flex justify-between pt-2 border-t border-gray-200">
+                    <div className="flex justify-between pt-2 border-t border-indigo-200">
                       <span>Subtotal:</span>
                       <span>$984.70</span>
                     </div>
@@ -343,8 +361,10 @@ export default function App() {
                 </div>
 
                 {/* Item B */}
-                <div className="mb-6 pb-4 border-b border-gray-300">
-                  <h3 className="mb-3 text-[#2c3e50]">ITEM B: Master Bedroom (Carpet Only)</h3>
+                <div className="mb-6 pb-4 border-b border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-xl">
+                  <h3 className="mb-3 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    ITEM B: Master Bedroom (Carpet Only)
+                  </h3>
                   <div className="space-y-1 text-sm">
                     <div className="flex justify-between">
                       <span>Area: 196 sq ft</span>
@@ -353,7 +373,7 @@ export default function App() {
                       <span>Carpet Material ($2.49/sq ft):</span>
                       <span>$488.04</span>
                     </div>
-                    <div className="flex justify-between pt-2 border-t border-gray-200">
+                    <div className="flex justify-between pt-2 border-t border-purple-200">
                       <span>Subtotal:</span>
                       <span>$488.04</span>
                     </div>
@@ -361,10 +381,12 @@ export default function App() {
                 </div>
 
                 {/* Grand Total */}
-                <div className="mt-6 pt-4 border-t-4 border-double border-[#2c3e50]">
+                <div className="mt-6 pt-4 border-t-4 border-double border-indigo-400 bg-gradient-to-r from-indigo-100 to-purple-100 p-4 rounded-xl">
                   <div className="flex justify-between items-center">
                     <span className="text-xl">GRAND TOTAL:</span>
-                    <span className="text-2xl text-[#2c3e50]">$1,472.74</span>
+                    <span className="text-3xl bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+                      $1,472.74
+                    </span>
                   </div>
                 </div>
 
@@ -376,21 +398,27 @@ export default function App() {
 
               {/* Room Cost Breakdown */}
               <div className="mt-12 max-w-4xl mx-auto">
-                <h3 className="text-[#2c3e50] mb-6 text-center">Detailed Room Cost Breakdown</h3>
+                <h3 className="bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent mb-6 text-center">
+                  Detailed Room Cost Breakdown
+                </h3>
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg border-2 border-blue-300 cursor-pointer hover:shadow-lg transition-shadow"
+                  <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-6 rounded-2xl shadow-xl cursor-pointer hover-lift text-white animate-float"
                        onClick={() => navigateToRoom('living-room')}>
-                    <h4 className="text-[#2c3e50] mb-3">Living Room</h4>
-                    <p className="text-2xl mb-2">$984.70</p>
-                    <p className="text-sm text-gray-600 mb-3">Carpet, molding & installation</p>
-                    <button className="text-sm text-blue-700 hover:underline">View Full Details →</button>
+                    <h4 className="text-white mb-3">Living Room</h4>
+                    <p className="text-4xl mb-2">$984.70</p>
+                    <p className="text-sm text-blue-100 mb-3">Carpet, molding & installation</p>
+                    <button className="text-sm text-white hover:underline bg-white/20 px-4 py-2 rounded-lg">
+                      View Full Details →
+                    </button>
                   </div>
-                  <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg border-2 border-purple-300 cursor-pointer hover:shadow-lg transition-shadow"
+                  <div className="bg-gradient-to-br from-purple-500 to-pink-600 p-6 rounded-2xl shadow-xl cursor-pointer hover-lift text-white animate-float delay-200"
                        onClick={() => navigateToRoom('master-bedroom')}>
-                    <h4 className="text-[#2c3e50] mb-3">Master Bedroom</h4>
-                    <p className="text-2xl mb-2">$488.04</p>
-                    <p className="text-sm text-gray-600 mb-3">Carpet material only</p>
-                    <button className="text-sm text-purple-700 hover:underline">View Full Details →</button>
+                    <h4 className="text-white mb-3">Master Bedroom</h4>
+                    <p className="text-4xl mb-2">$488.04</p>
+                    <p className="text-sm text-purple-100 mb-3">Carpet material only</p>
+                    <button className="text-sm text-white hover:underline bg-white/20 px-4 py-2 rounded-lg">
+                      View Full Details →
+                    </button>
                   </div>
                 </div>
               </div>
@@ -399,19 +427,19 @@ export default function App() {
         )}
 
         {/* Print Button */}
-        <div className="text-center py-12">
+        <div className="text-center py-12 animate-fadeIn">
           <button
             onClick={handlePrint}
-            className="bg-[#2c3e50] text-white px-8 py-3 rounded-lg border-2 border-[#2c3e50] hover:bg-white hover:text-[#2c3e50] transition-colors duration-300 shadow-lg hover:shadow-xl"
+            className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-10 py-4 rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-110 transition-all duration-300 btn-modern"
           >
-            Print Official Report
+            🖨️ Print Official Report
           </button>
         </div>
       </main>
 
-      <footer className="bg-[#2c3e50] text-white text-center py-6 mt-12">
+      <footer className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white text-center py-8 mt-12 animate-gradientShift">
         <p className="mb-2">© 2025 The Polynomial Residence | Educational Mathematics Project</p>
-        <p className="text-sm opacity-75">Demonstrating Real-World Applications of Algebra in Architecture</p>
+        <p className="text-sm opacity-90">Demonstrating Real-World Applications of Algebra in Architecture</p>
       </footer>
 
       {/* Print-specific styles */}

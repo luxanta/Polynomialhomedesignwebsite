@@ -24,19 +24,19 @@ interface RoomDetailProps {
 
 export function RoomDetail({ room, onBack }: RoomDetailProps) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 animate-fadeIn">
       {/* Header */}
-      <header className="bg-[#2c3e50] text-white py-6 px-6 shadow-lg">
+      <header className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-6 px-6 shadow-2xl animate-gradientShift">
         <div className="max-w-6xl mx-auto">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 mb-4 hover:text-gray-300 transition-colors"
+            className="btn-modern flex items-center gap-2 mb-4 bg-white/10 hover:bg-white/20 px-4 py-2 rounded-xl border border-white/20 transform hover:scale-105 transition-all duration-300"
           >
             <ArrowLeft size={20} />
             <span>Back to Home</span>
           </button>
-          <h1 className="mb-2">{room.name}</h1>
-          <p className="opacity-90">Detailed Room Analysis & Specifications</p>
+          <h1 className="mb-2 animate-fadeIn">{room.name}</h1>
+          <p className="opacity-90 animate-fadeIn delay-100">Detailed Room Analysis & Specifications</p>
         </div>
       </header>
 
@@ -44,31 +44,31 @@ export function RoomDetail({ room, onBack }: RoomDetailProps) {
         {/* Quick Info Cards */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
           {/* Dimensions Card */}
-          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-500">
+          <div className="bg-white rounded-2xl shadow-xl p-6 border-l-4 border-blue-500 hover-lift animate-slideInLeft">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 bg-blue-100 rounded-lg">
-                <Ruler className="text-blue-600" size={24} />
+              <div className="p-3 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl shadow-lg animate-float">
+                <Ruler className="text-white" size={24} />
               </div>
-              <h2 className="text-[#2c3e50]">Dimensions</h2>
+              <h2 className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Dimensions</h2>
             </div>
-            <p className="font-mono bg-gray-50 p-4 rounded border border-gray-200">
+            <p className="font-mono bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-xl border-2 border-blue-200">
               {room.dimensions}
             </p>
             <div className="mt-4 flex items-start gap-2 text-sm text-gray-600">
-              <CheckCircle2 size={16} className="mt-0.5 text-green-600" />
+              <CheckCircle2 size={16} className="mt-0.5 text-green-600 animate-pulse-custom" />
               <span>{room.verification}</span>
             </div>
           </div>
 
           {/* Area Card */}
-          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-red-500">
+          <div className="bg-white rounded-2xl shadow-xl p-6 border-l-4 border-red-500 hover-lift animate-slideInRight">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 bg-red-100 rounded-lg">
-                <SquareEqual className="text-red-600" size={24} />
+              <div className="p-3 bg-gradient-to-br from-red-400 to-red-600 rounded-xl shadow-lg animate-float delay-100">
+                <SquareEqual className="text-white" size={24} />
               </div>
-              <h2 className="text-[#2c3e50]">Area Polynomial</h2>
+              <h2 className="bg-gradient-to-r from-red-600 to-pink-600 bg-clip-text text-transparent">Area Polynomial</h2>
             </div>
-            <code className="block bg-red-50 text-[#c0392b] p-4 rounded border border-red-200 font-mono">
+            <code className="block bg-gradient-to-r from-red-50 to-pink-50 text-red-700 p-4 rounded-xl border-2 border-red-200 font-mono">
               {room.areaPolynomial}
             </code>
             <div className="mt-4 text-sm text-gray-600">
@@ -77,14 +77,14 @@ export function RoomDetail({ room, onBack }: RoomDetailProps) {
           </div>
 
           {/* Perimeter Card */}
-          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500">
+          <div className="bg-white rounded-2xl shadow-xl p-6 border-l-4 border-green-500 hover-lift animate-slideInLeft delay-100">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 bg-green-100 rounded-lg">
-                <Calculator className="text-green-600" size={24} />
+              <div className="p-3 bg-gradient-to-br from-green-400 to-green-600 rounded-xl shadow-lg animate-float delay-200">
+                <Calculator className="text-white" size={24} />
               </div>
-              <h2 className="text-[#2c3e50]">Perimeter Polynomial</h2>
+              <h2 className="bg-gradient-to-r from-green-600 to-indigo-600 bg-clip-text text-transparent">Perimeter Polynomial</h2>
             </div>
-            <code className="block bg-green-50 text-green-700 p-4 rounded border border-green-200 font-mono">
+            <code className="block bg-gradient-to-r from-green-50 to-indigo-50 text-green-700 p-4 rounded-xl border-2 border-green-200 font-mono">
               {room.perimeterPolynomial}
             </code>
             <div className="mt-4 text-sm text-gray-600">
@@ -93,19 +93,19 @@ export function RoomDetail({ room, onBack }: RoomDetailProps) {
           </div>
 
           {/* Description Card */}
-          <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-purple-500">
+          <div className="bg-white rounded-2xl shadow-xl p-6 border-l-4 border-purple-500 hover-lift animate-slideInRight delay-100">
             <div className="flex items-center gap-3 mb-4">
-              <div className="p-3 bg-purple-100 rounded-lg">
-                <Info className="text-purple-600" size={24} />
+              <div className="p-3 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl shadow-lg animate-float delay-300">
+                <Info className="text-white" size={24} />
               </div>
-              <h2 className="text-[#2c3e50]">Room Description</h2>
+              <h2 className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">Room Description</h2>
             </div>
             <p className="text-gray-700 leading-relaxed">{room.description}</p>
           </div>
         </div>
 
         {/* Features Section */}
-        <div className="bg-white rounded-lg shadow-lg p-6 mb-8">
+        <div className="bg-white rounded-2xl shadow-xl p-6 mb-8 hover-lift animate-slideInLeft delay-200">
           <h2 className="text-[#2c3e50] mb-4 pb-3 border-b-2 border-gray-200">Room Features</h2>
           <ul className="grid md:grid-cols-2 gap-3">
             {room.features.map((feature, index) => (
@@ -119,7 +119,7 @@ export function RoomDetail({ room, onBack }: RoomDetailProps) {
 
         {/* Cost Breakdown (if available) */}
         {room.costBreakdown && (
-          <div className="bg-white rounded-lg shadow-lg p-6 border-2 border-[#2c3e50]">
+          <div className="bg-white rounded-2xl shadow-xl p-6 border-2 border-[#2c3e50] hover-lift animate-slideInRight delay-200">
             <h2 className="text-[#2c3e50] mb-6 pb-3 border-b-2 border-[#2c3e50]">
               Cost Analysis
             </h2>
